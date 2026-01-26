@@ -1,33 +1,56 @@
+/* =========================================================
+   FONT IMPORT
+========================================================= */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
 
-* {
-  font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Helvetica", "Arial", sans-serif;
-}
+/* =========================================================
+   CSS VARIABLES
+========================================================= */
 :root {
   --nav-bar-white: #fefefe;
   --off-white: #f9fafb;
   --white: #ffffff;
+
   --primary: #0079c1;
   --second-primary: #0d47a1;
+
   --text-gradient: linear-gradient(90deg, #0079c1, #00b4d8);
   --gradient: linear-gradient(135deg, #0d47a1 0%, #0079c1 100%);
+
   --footer-bg: #06314f;
   --footer-text: #d1d5db;
+
   --header-card-border: #e5e7eb;
   --body-card-border: #f1f1f1;
 }
-body,
-html {
+
+/* =========================================================
+   RESET & BASE STYLES
+========================================================= */
+* {
+  font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Helvetica", "Arial", sans-serif;
+}
+
+html,
+body {
   overflow-x: hidden;
 }
-.navbar {
-  background: var(--nav-bar-white);
-  backdrop-filter: blur(6px);
+
+p {
+  font-size: 18px;
 }
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+/* =========================================================
+   SCROLLBAR STYLING
+========================================================= */
 html {
   scrollbar-width: thin;
-  scrollbar-color: var(--gradient);
+  scrollbar-color: var(--primary) var(--off-white);
 }
 
 /* Chrome, Edge, Safari */
@@ -37,32 +60,40 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--off-white); /* match your site background */
+  background: var(--off-white);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--text-gradient);
   border-radius: 10px;
-  border: 2px solid var(--off-white); /* soft separation */
+  border: 2px solid var(--off-white);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--hover-scrollbar);
+  background: var(--gradient);
 }
 
 ::-webkit-scrollbar-corner {
   background: var(--off-white);
 }
 
+/* =========================================================
+   NAVBAR
+========================================================= */
+.navbar {
+  background: var(--nav-bar-white);
+  backdrop-filter: blur(6px);
+}
+
 .navbar-brand {
   font-weight: 600;
-  color: var(--primary) !important;
   font-size: 25px;
+  color: var(--primary) !important;
 }
+
 .navbar-bar,
 .nav-link {
-  
   font-weight: 600;
   font-size: 23px;
   transition: color 0.3s ease;
@@ -72,23 +103,16 @@ html {
   background-color: var(--white);
   color: var(--second-primary);
 }
-.text-primary {
-  color: var(--primary) !important;
-}
 
-p {
-  font-size: 18px;
-}
-
-/* Hero Section */
+/* =========================================================
+   HERO SECTION
+========================================================= */
 .hero-section {
-  background: #f4fbfe ;
-  /* background: #e9f5fc; */
-
-
-  padding: 140px 0 100px 0;
-  margin-top: 15px; /* offset for fixed navbar */
+  background: #f4fbfe;
+  padding: 140px 0 100px;
+  margin-top: 15px; /* offset fixed navbar */
 }
+
 .text-gradient {
   background: var(--text-gradient);
   -webkit-background-clip: text;
@@ -96,25 +120,33 @@ p {
   background-clip: text;
   color: transparent;
 }
-/* cards */
+
+/* =========================================================
+   CARD SYSTEM
+========================================================= */
+.card {
+  border-radius: 1rem;
+}
+
 .stats-card {
   border: none;
-  border-radius: 1rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+/* Product Cards */
 .product-card {
   border: none;
   border-radius: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
   height: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
+
 .product-card img {
   object-fit: cover;
   aspect-ratio: 4 / 3;
@@ -127,21 +159,26 @@ p {
   }
 }
 
+/* Section backgrounds */
 #products,
 #stats {
   background-color: var(--off-white);
 }
 
-/* Footer */
+/* =========================================================
+   FOOTER
+========================================================= */
 footer {
   background-color: var(--footer-bg);
   color: var(--footer-text);
-  padding: 60px 0 20px 0;
+  padding: 60px 0 20px;
 }
+
 footer a {
   color: var(--footer-text);
   text-decoration: none;
 }
+
 footer a:hover {
   color: var(--white);
 }
@@ -149,30 +186,37 @@ footer a:hover {
 hr {
   color: var(--primary);
 }
+
+/* =========================================================
+   WHATSAPP FLOAT BUTTON
+========================================================= */
 .whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    color: #fff;
-    border-radius: 50%;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    z-index: 1000;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .whatsapp-float img {
-    margin-top: 10px;
-  }
+.whatsapp-float img {
+  margin-top: 10px;
+}
 
-  .whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 10px rgba(0,0,0,0.4);
-  }
-/* Scroll-up animation */
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================================
+   SCROLL-UP ANIMATIONS
+========================================================= */
 .scroll-up {
   opacity: 0;
   transform: translateY(40px);
@@ -185,8 +229,7 @@ hr {
   transform: translateY(0);
 }
 
-/* Optional: stagger effect */
+/* Staggered delays */
 .scroll-delay-1 { transition-delay: 0.1s; }
 .scroll-delay-2 { transition-delay: 0.2s; }
 .scroll-delay-3 { transition-delay: 0.3s; }
-

@@ -2,7 +2,7 @@
   "name": "eleventy-project",
   "version": "1.0.0",
   "scripts": {
-    "build": "npx @11ty/eleventy",
+    "build": "eleventy",
     "start": "npx @11ty/eleventy --serve"
   },
   "devDependencies": {

@@ -2,7 +2,7 @@
   "name": "eleventy-project",
   "version": "1.0.0",
   "scripts": {
-    "build": "node ./node_modules/@11ty/eleventy/cmd.cjs",
+    "build": "npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve"
   },
   "devDependencies": {
